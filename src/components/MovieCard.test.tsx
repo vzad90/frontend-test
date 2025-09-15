@@ -267,7 +267,7 @@ describe('MovieCard', () => {
     )
 
     expect(screen.getByText('Incomplete Movie')).toBeInTheDocument()
-    expect(screen.getByText((content, element) => {
+    expect(screen.getByText((_, element) => {
       return element?.textContent === ' • '
     })).toBeInTheDocument()
   })

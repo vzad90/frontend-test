@@ -61,7 +61,7 @@ describe('HomeHeader', () => {
   it('should display username when provided', () => {
     render(<HomeHeader {...defaultProps} username="john" />)
 
-    expect(screen.getByText((content, element) => {
+    expect(screen.getByText((_, element) => {
       return element?.textContent === 'User: john'
     })).toBeInTheDocument()
   })
@@ -153,7 +153,7 @@ describe('HomeHeader', () => {
     render(<HomeHeader {...props} />)
 
     expect(screen.getByDisplayValue('inception')).toBeInTheDocument()
-    expect(screen.getByText((content, element) => {
+    expect(screen.getByText((_, element) => {
       return element?.textContent === 'User: jane'
     })).toBeInTheDocument()
     expect(screen.getByText('Change user')).toBeInTheDocument()
@@ -174,7 +174,7 @@ describe('HomeHeader', () => {
   it('should handle special characters in username', () => {
     render(<HomeHeader {...defaultProps} username="user@example.com" />)
 
-    expect(screen.getByText((content, element) => {
+    expect(screen.getByText((_, element) => {
       return element?.textContent === 'User: user@example.com'
     })).toBeInTheDocument()
   })
